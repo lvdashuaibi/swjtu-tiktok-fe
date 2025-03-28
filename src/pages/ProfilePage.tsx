@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { ArrowLeftOutlined, UserOutlined, VideoCameraOutlined, HeartOutlined } from '@ant-design/icons';
 import { useAuth } from '../utils/AuthContext';
-import { getUserInfo, getUserVideos, getFollowList, getFollowerList, followAction } from '../services/api';
+import { getUserInfo, getPublishList, getFollowList, getFollowerList, followAction } from '../services/api';
 import { User, Video } from '../types';
 
 const Container = styled.div`
@@ -235,7 +235,7 @@ const ProfilePage: React.FC = () => {
       }
       
       // 获取用户视频
-      const videosResponse = await getUserVideos(userId!, token);
+      const videosResponse = await getPublishList(userId!, token);
       if (videosResponse.status_code === 0) {
         setVideos(videosResponse.video_list || []);
       }
