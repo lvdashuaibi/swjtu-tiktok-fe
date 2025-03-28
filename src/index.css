@@ -5,9 +5,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 修复移动端上的一些问题 */
+input, textarea, button {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-size: 16px; /* 防止iOS缩放 */
+}
+
+input:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
+/* 防止视频超出容器 */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
